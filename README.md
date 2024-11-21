@@ -1,14 +1,55 @@
-# Welcome to your CDK TypeScript project
+# AWS Batch Stack
 
-This is a blank project for CDK development with TypeScript.
+## Prerequisites
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+You should have `aws-cli` installed on your computer.
 
-## Useful commands
+## Setup
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+### Configure access key and region
+
+Start by creating an AWS access key in your console. Then run the following command
+to configure your access key id, access key secret and AWS region.
+
+```
+aws configure
+```
+
+### Setup docker image on ECR
+
+For the guide [here](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html)
+to setup your ECR repository and push your image.
+
+#### Create `.env` file
+
+```
+cp .env.example .env 
+```
+
+After creating your `.env` file, next update the `REPOSITORY_NAME`
+with the repository name you used in ECR
+
+### Install CDK
+
+```
+npm install -g aws-cdk
+```
+
+### Deploy
+
+#### Install dependencies
+
+```
+npm install 
+```
+
+##### Deploy your stack
+
+```
+cdk deploy
+```
+
+For a detailed explanation please watch the video on YouTube to understand how it works
+https://youtu.be/ETZfp3yuXww
+
+
